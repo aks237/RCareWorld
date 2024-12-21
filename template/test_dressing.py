@@ -19,7 +19,7 @@ def _main(use_graphics=False):
         (~/.config/unity3d/RCareWorld/DressingPlayer).
         The path may be different accotding to the OS and your computer configuration.
         """
-            
+
         print(text)
     # Initialize the environment
     env = DressingEnv(graphics=use_graphics)

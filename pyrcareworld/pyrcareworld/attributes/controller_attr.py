@@ -393,3 +393,25 @@ class ControllerAttr(attr.ColliderAttr):
         self._send_data("AddRoot6DOF", new_id)
         self.env.attrs[new_id] = ControllerAttr(self.env, new_id)
         return self.env.attrs[new_id]
+
+    """
+    NEW MUSCULOSKELETAL METHODS
+    """
+
+    def SetJointPositionsEuler(self, angles: list):
+        """
+        Set Euler angle positions of moveable joints
+        """
+        self._send_data("SetJointPositionsEuler",angles)
+
+    def SetJointPositionsEulerDirectly(self, angles: list):
+        """
+        Set Euler angle positions of moveable joints directly
+        """
+        self._send_data("SetJointPositionsEulerDirectly", angles)
+
+    def UpdateTendonsToCurrent(self, update_torques: bool):
+        """
+        Update tendon data in controller
+        """
+        self._send_data("UpdateTendonsToCurrent", update_torques)

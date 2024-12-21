@@ -154,6 +154,7 @@ class RCareWorld(ABC):
         this_object_type = objs[1]
         this_object_data = objs[2]
 
+        
         try:
             attr_type = attr.attrs[this_object_type]
         except Exception as e:
@@ -326,6 +327,7 @@ class RCareWorld(ABC):
         """
         while "scene_init" not in self.data:
             self._step(simulate=False)
+            print("initializing scene")
         self.data.pop("scene_init")
         self._send_debug_data("SetPythonVersion", pyrcareworld.__version__)
 

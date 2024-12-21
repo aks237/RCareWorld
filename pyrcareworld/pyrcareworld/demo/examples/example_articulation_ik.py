@@ -25,19 +25,26 @@ from pyrcareworld.envs.base_env import RCareWorld
 # Initialize the environment with the specified scene file
 player_path = os.path.join(executable_path, "../executable/Player/Player.x86_64")
 
-env = RCareWorld(scene_file="ArticulationIK.json", executable_file=player_path)
-
+env = RCareWorld(scene_file="ArticulationIK.json", executable_file=player_path, log_level=3)
+print("environment initialized")
 # List of robot IDs to be controlled
 ids = [221584]
 
+
 # Function to perform movement and rotation on a robot
 def move_and_rotate_robot(robot_id):
+    print("retrieving attribute")
+
     # Get the current robot's attributes
     current_robot = env.GetAttr(robot_id)
+    print("attribute retrieved")
 
     # Move the robot down
+    print("doing IK move")
     current_robot.IKTargetDoMove(position=[0, 0, -0.5], duration=0.1, relative=True)
+    print("IK move sent")
     env.step()
+    print("stepping environment")
     while not current_robot.data["move_done"]:
         env.step()
 

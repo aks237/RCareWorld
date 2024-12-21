@@ -40,7 +40,7 @@ attrs = {
 "ActiveLightSensorAttr": ActiveLightSensorAttr,
 "DigitAttr": DigitAttr,
 "GelSlimAttr": GelSlimAttr,
-"HumanbodyAttr": HumanbodyAttr,
+"HumanBodyAttr": HumanbodyAttr,
 "GraspSimAttr": GraspSimAttr,
 "SoftBodyAttr": SoftBodyAttr,
 # "IntersectAttr": IntersectAttr,

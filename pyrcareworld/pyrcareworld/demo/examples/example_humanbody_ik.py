@@ -28,7 +28,8 @@ from pyrcareworld.demo import executable_path
 player_path = os.path.join(executable_path, "../executable/Player/Player.x86_64")
 
 # Initialize the environment with the specified scene file
-env = RCareWorld(scene_file="HumanBodyIK.json", executable_file=player_path)
+#env = RCareWorld(scene_file="HumanBodyIK.json", executable_file=player_path)
+env = RCareWorld(scene_file="HumanBodyIK.json", executable_file="@editor")
 
 # Perform an initial simulation step
 env.step()
